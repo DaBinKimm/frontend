@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체</title>
+</head>
+
+<body>
+  <script>
+    console.log("---------- 객체 생성 ----------");
+    // key:value
+    let person = { // let person = new Object();
+      name: "홍길동",
+      age: 20,
+      pet: "cat"
+    };
+
+    // 점 표기법 - 객체 속성에 접근하는 방법
+    console.log(person.name);
+    console.log(person.age);
+    console.log(person.pet);
+
+    // 괄호 표기법 - 큰따옴표로 감싸야 함, 객체의 키값이 고정적이지 않고 변경될 수 있을 때 사용, 함수의 매개변수로 사용할 때 사용
+    console.log(person["name"]);
+    console.log(person["age"]);
+    console.log(person["pet"]);
+
+    const getValue = (key) => {
+      console.log(person[key]);
+    }
+
+    getValue("name");
+    getValue("age");
+    getValue("pet");
+
+    // 객체 속성 추가
+    person.phone = "010-1234-5678"; // 점 표기법
+    person["height"] = 180; // 괄호 표기법
+
+    console.log(person);
+
+    // 객세 속성 변경
+    person.age = 25;
+    person["height"] = 175;
+
+    console.log(person);
+
+    console.log("---------- 상수 객체 생성 ----------");
+
+    // const로 선언하더라고 객체의 속성을 변경할 수 있음
+
+    const person2 = {
+      name: "홍길동",
+      age: 20,
+      pet: "cat"
+    }
+
+    person2.age = 25;
+    person2["pet"] = "dog";
+
+    console.log(person2);
+
+    // 객체 자체의 새로운 객체를 재할당할 수 없음
+    // person2 = {
+    //   pet : "dog"
+    // }
+
+    // 객체 속성 삭제
+    delete person2.pet;
+    delete person2["age"];
+    console.log(person2);
+
+    console.log("---------- 객체 속성이 함수인 경우 ----------");
+    // 객체의 속성이 함수일 경우 이를 method라고 함 
+    // 매서드는 function 키워드를 사용해야함.
+    // this를 사용하여 객체의 속성에 접근할 수 있음
+    // this는 객체 자체를 가리킴
+    
+    const person3 = {
+      name: "홍길동",
+      age: 20,
+      pet: "cat",
+      print: function () { // 화살표형 사용 불가
+        console.log(`제 이름은 ${this.name} 입니다.`);
+      }
+    }
+
+
+    person3.print();
+    person3["print"]();
+  </script>
+</body>
+
+</html>

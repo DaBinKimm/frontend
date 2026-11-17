@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스코프</title>
+</head>
+
+<body>
+  <script>
+    // 스코프란?
+    //   -범위, 변수 혹은 함수가 갖게되는 유효범위
+
+    // 전역 스코프(Global scope) -
+    //   어디서든지 해당 변수에 접근 가능
+
+    // 지역 스코프(Local scope) -
+    //   지역을 벗어난 곳에서는 접근 불가능
+
+    console.log("---------- 전역 & 지역 스코프 ----------");
+    const num = 10; // 전역 스코프
+
+    function print() {
+      const num = 100; // 지역 스코프
+      console.log(`지역스코프 ${num}`);
+    }
+
+    print();
+
+    console.log(`전역스코프 ${num}`);
+
+    console.log("---------- 블록 스코프 ----------");
+
+    function print2() {
+      for (let i = 0; i < 10; i++) {
+        console.log(`블록 스코프 : ${i}`);
+      }
+
+      // console.log(i); // ReferenceError: i is not defined
+    }
+
+    print2(); // let을 var로 바꾸면 10으로 출력
+
+    console.log("---------- let & var 비교 ----------");
+
+    // let num1 = 10;
+    // let num1 = 100;
+
+    // console.log(num1); // ERROR (같은 이름의 변수를 선언하면 오류가 발생)
+
+    var num2 = 20;
+    var num2 = 200;
+
+    console.log(num2); // 200 (같은 이름의 변수를 선언하면 덮어씌워짐 -> 여러가지 오류가 발생할 수 있음)
+  </script>
+</body>
+
+</html>

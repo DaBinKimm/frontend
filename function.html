@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수와 지역변수, 전역변수</title>
+</head>
+<body>
+  
+  <script>
+    console.log("---------- 함수 사용 X ----------");
+    let num1 = 10;
+    let num2 = 15;
+    let sum = num1 + num2;
+
+    console.log(sum);
+
+    let num3 = 1;
+    let num4 = 5;
+    let sum2 = num3 + num4;
+
+    console.log(sum2);
+
+    console.log("---------- 함수 사용 O ----------");
+
+    function add(num1, num2) {
+      console.log(num1 + num2);
+    }
+
+    add(10, 15); // 25
+
+    console.log("---------- return 사용 ----------");
+
+    function add2(num1, num2) {
+      return num1 + num2;
+      console.log('함수 호출') // 이 코드는 실행되지 않습니다.
+    }
+
+    console.log(`두 숫자를 더한 결과는 ${add2(10, 15)} 입니다.`);
+
+    console.log("---------- early return 패턴 ----------");
+
+    // if-else 패턴
+    function func(num) {
+      if(num > 0) {
+        if (num >= 10) {
+          console.log("num의 값은 10보다 크거나 같습니다.")
+        } else {
+          console.log("num의 값은 0보다 크고 10보다 작습니다.")
+        }
+      } else if (num === 0) {
+        console.log("num의 값은 0입니다.")
+      } else {
+        console.log("num의 값은 0보다 작습니다.")
+      }
+    }
+
+    func(15);
+
+    // early return 패턴
+    function func2(num) {
+      if (num === 0) return "num의 값은 0입니다.";
+      if (num < 0) return "num의 값은 0보다 작습니다.";
+      if (num >= 10) return "num의 값은 10보다 크거나 같습니다.";
+      return "num의 값은 0보다 크고 10보다 작습니다.";
+    }
+
+    console.log(func2(15));
+
+    console.log("---------- 즉시 실행 함수 ----------");
+
+    function print() {
+      console.log("print 함수가 호출되었습니다.");
+    }
+
+    print();
+
+    (function print2() {
+      console.log("print2 함수가 호출되었습니다.");
+    })();
+
+    console.log("---------- 지역변수 ----------");
+
+    // 지역변수
+    // function add3(num1, num2) {
+    //   let sum = num1 + num2;
+    //   return sum3;
+    // }
+
+    // add3(10, 15);
+    // console.log(sum3); // ReferenceError: sum3 is not defined
+
+    console.log("---------- 전역변수 ----------");
+    
+    let sum4 = 0;
+
+    function add4(num1, num2) {
+      sum4 = num1 + num2;
+    }
+
+    add4(100, 150);
+    console.log(sum4);
+  </script>
+</body>
+</html>

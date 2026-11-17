@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자료형</title>
+</head>
+
+<body>
+  <!-- 숫자형 : 숫자형(number)은 정수와 실수를 포함한 모든 숫자를 표현할 수 있는 자료형입니다. -->
+  <script type="text/javascript">
+    let n = 123;
+    n = 12.345;
+    alert(n);
+    alert( 1 / 0 ); // 무한대
+    alert( Infinity ); // 무한대
+    alert( "숫자가 아님" / 2 ); // NaN, 문자열을 숫자로 나누면 오류가 발생합니다.
+    alert( "숫자가 아님" / 2 + 5 ); // NaN
+  </script>
+
+  <!-- BigInt : 64비트 정수를 표현할 수 있는 자료형입니다. -->
+  <script type="text/javascript">
+    const bigInt = 1234567890123456789012345678901234567890n;
+    alert(bigInt);
+  </script>
+
+  <!-- 문자형 : 자바스크립트에선 문자열(string)을 따옴표로 묶습니다. -->
+  <script type="text/javascript">
+    let name = "John";
+    alert(`Hello, ${name}!`); // Hello, John!
+    alert(`the result is ${1 + 2}`); // the result is 3
+    alert("the result is ${1 + 2}"); // the result is ${1 + 2} (큰따옴표는 확장 기능을 지원하지 않습니다.)
+  </script>
+
+  <!-- 불린형 : 불린형(논리 타입)은 true와 false 두 가지 값밖에 없는 자료형입니다. -->
+  <script>
+    let nameFieldChecked = true; // 네, name field가 확인되었습니다(checked).
+    let ageFieldChecked = false; // 아니요, age field를 확인하지 않았습니다(not checked)
+
+    // 불린값은 비교 결과를 저장할 때도 사용됩니다.
+    let isGreater = 4 > 1;
+    alert(isGreater); // true (비교 결과: "yes")
+  </script>
+
+  <!-- Null : 값이 없음을 나타내는 자료형입니다. -->
+  <script>
+    let age = null;
+    alert(age); // null
+  </script>
+
+  <!-- Undefined : 값이 정의되지 않은 상태를 나타내는 자료형입니다. -->
+  <script>
+    let age2;
+    alert(age2); // undefined
+  </script>
+  
+  <!-- 과제 -->
+  <script>
+    let name = "Ilya";
+
+    alert(`hello ${1}`); // hello 1
+
+    alert(`hello ${"name"}`); // hello name
+
+    alert(`hello ${name}`); // hello Ilya
+  </script>
+</body>
+
+</html>
