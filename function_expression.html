@@ -7,20 +7,20 @@
 </head>
 <body>
   <script>
-    console.log("---------- 함수 표현식 - 호이스팅 O ----------");
+    console.log("-------------------- 함수 표현식 - 호이스팅 O --------------------");
     print();
     function print() {
       console.log("print 함수가 호출되었습니다.");
     }
 
-    console.log("---------- 함수 표현식 - 호이스팅 X ----------");
+    console.log("-------------------- 함수 표현식 - 호이스팅 X --------------------");
     // 함수 표현식 = 호이스팅 X,
     // print2(); // can not access 'print2' before initialization
     // let print2 = function() {
     //   console.log("print2 함수가 호출되었습니다.");
     // }
 
-    console.log("---------- 콜백함수 ----------");
+    console.log("-------------------- 콜백함수 --------------------");
     // 콜백함수 - 다른 함수에 매개변수로 넘겨준 함수
   
     function start(name, callback) {
