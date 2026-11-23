@@ -9,13 +9,13 @@
 
 <body>
   <script>
-    console.log('---------- for문 - 배열의 모든 요소 출력 ----------')
+    console.log('-------------------- for문 - 배열의 모든 요소 출력 --------------------')
     let arr1 = [1, 2, 3, 4, 5];
     for (let i = 0; i < arr1.length; i++) {
       console.log(arr1[i]); // 1, 2, 3, 4, 5
     }
 
-    console.log('---------- forEach 메서드 - 배열의 모든 요소 출력 ----------')
+    console.log('-------------------- forEach 메서드 - 배열의 모든 요소 출력 --------------------')
     arr1.forEach((elm) => {
       console.log(elm); // 1, 2, 3, 4, 5
     });
@@ -30,7 +30,7 @@
       console.log(array); // [ 1, 2, 3, 4, 5 ]
     })
 
-    console.log('---------- map 메서드 - 배열의 모든 요소 출력 ----------')
+    console.log('-------------------- map 메서드 - 배열의 모든 요소 출력 --------------------')
     let arr2 = [1, 2, 3, 4, 5];
     let newArray = arr2.map((elm) => {
       return elm * 10;
@@ -38,7 +38,7 @@
 
     console.log(newArray); // [ 10, 20, 30, 40, 50 ]
 
-    console.log('---------- at 메서드 : 특정 인덱스의 요소를 찾는 방법  ----------')
+    console.log('-------------------- at 메서드 : 특정 인덱스의 요소를 찾는 방법  --------------------')
     let colors = ["green", "blue", "purple"];
 
     console.log(colors[2]); // purple
@@ -46,20 +46,20 @@
     console.log(colors.at(1)); // blue : 1번째 요소를 찾는 방법
     console.log(colors.at(-1)); // purple : 마지막 요소를 찾는 방법
 
-    console.log('---------- includes 메서드 : 특정 요소가 배열에 포함되어 있는지 확인하는 방법  ----------')
+    console.log('-------------------- includes 메서드 : 특정 요소가 배열에 포함되어 있는지 확인하는 방법  --------------------')
 
     console.log(colors.includes("blue")); // true
     console.log(colors.includes("yellow")); // false      
     console.log(colors.includes("blue", 2)); // false : 2번째 인덱스부터 확인
     console.log(colors.includes("blue", 1)); // true : 1번째 인덱스부터 확인
 
-    console.log('---------- indexOf 메서드 : 특정 요소의 인덱스를 찾는 방법  ----------')
+    console.log('-------------------- indexOf 메서드 : 특정 요소의 인덱스를 찾는 방법  --------------------')
     console.log(colors.indexOf("purple")); // 2
     console.log(colors.indexOf("yellow")); // -1 : 요소가 없으면 -1을 반환
     console.log(colors.indexOf("blue", 1)); // 1 : 1번째 인덱스부터 확인
 
 
-    console.log('---------- findIndex 메서드 : 특정 요소의 인덱스를 찾는 방법  ----------')
+    console.log('-------------------- findIndex 메서드 : 특정 요소의 인덱스를 찾는 방법  --------------------')
     let colors2 = [{
         id: 1,
         color: "green"
@@ -87,7 +87,7 @@
       return console.log(array);
     })
 
-    console.log('---------- find 메서드 : 특정 요소를 찾는 방법  ----------')
+    console.log('-------------------- find 메서드 : 특정 요소를 찾는 방법  --------------------')
     let idx2 = colors2.find((elm)=>{
       return elm.color === "purple"
     });
@@ -97,14 +97,14 @@
     console.log(idx2); // { id: 3, color: 'purple' }
     console.log(idx3); // { id: 3, color: 'purple' }
 
-    console.log('---------- filter 메서드 : 배열에서 특정조건에 맞는 요소를 찾는 방법  ----------')
+    console.log('-------------------- filter 메서드 : 배열에서 특정조건에 맞는 요소를 찾는 방법  --------------------')
     let filterArray = colors2.filter((elm, idx, array) => {
       return elm.id > 1;
     })
 
     console.log(filterArray); // [ { id: 2, color: 'blue' }, { id: 3, color: 'purple' } ]
 
-    console.log('---------- slice 메서드 : 배열에서 특정값들만 추출해서 새로운 배열을 만드는 방법  ----------')
+    console.log('-------------------- slice 메서드 : 배열에서 특정값들만 추출해서 새로운 배열을 만드는 방법  --------------------')
     let colors3 = [{
         id: 1,
         color: "green"

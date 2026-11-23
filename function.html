@@ -8,7 +8,7 @@
 <body>
   
   <script>
-    console.log("---------- 함수 사용 X ----------");
+    console.log("-------------------- 함수 사용 X --------------------");
     let num1 = 10;
     let num2 = 15;
     let sum = num1 + num2;
@@ -21,7 +21,7 @@
 
     console.log(sum2);
 
-    console.log("---------- 함수 사용 O ----------");
+    console.log("-------------------- 함수 사용 O --------------------");
 
     function add(num1, num2) {
       console.log(num1 + num2);
@@ -29,7 +29,7 @@
 
     add(10, 15); // 25
 
-    console.log("---------- return 사용 ----------");
+    console.log("-------------------- return 사용 --------------------");
 
     function add2(num1, num2) {
       return num1 + num2;
@@ -38,7 +38,7 @@
 
     console.log(`두 숫자를 더한 결과는 ${add2(10, 15)} 입니다.`);
 
-    console.log("---------- early return 패턴 ----------");
+    console.log("-------------------- early return 패턴 --------------------");
 
     // if-else 패턴
     function func(num) {
@@ -67,7 +67,7 @@
 
     console.log(func2(15));
 
-    console.log("---------- 즉시 실행 함수 ----------");
+    console.log("-------------------- 즉시 실행 함수 --------------------");
 
     function print() {
       console.log("print 함수가 호출되었습니다.");
@@ -79,7 +79,7 @@
       console.log("print2 함수가 호출되었습니다.");
     })();
 
-    console.log("---------- 지역변수 ----------");
+    console.log("-------------------- 지역변수 --------------------");
 
     // 지역변수
     // function add3(num1, num2) {
@@ -90,7 +90,7 @@
     // add3(10, 15);
     // console.log(sum3); // ReferenceError: sum3 is not defined
 
-    console.log("---------- 전역변수 ----------");
+    console.log("-------------------- 전역변수 --------------------");
     
     let sum4 = 0;
 
