@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>구조 분해 할당</title>
+</head>
+
+<body>
+  <script>
+    let colors = ["green", "blue", "purple"];
+    let [c1, c2, c3] = colors;
+
+    console.log(c1);
+    console.log(c2);
+    console.log(c3);
+
+    console.log('---------- 선언 분리 할당 ----------');
+    let c1_1, c2_1, c3_1, c4_1; // 선언 분리 할당
+    [c1_1, c2_1, c3_1, c4_1 = "yellow"] = ["green", "blue",
+    "purple"]; // 배열 요소의 개수와 변수의 개수가 일치하지 않으면 나머지는 undefined로 할당, 마지막 변수에 기본값 할당 가능 = 기본값 할당
+
+    console.log(c1_1); // green
+    console.log(c2_1); // blue
+    console.log(c3_1); // purple
+    console.log(c4_1); // undefined
+
+
+    console.log('---------- 구조 분해 할당 ----------');
+    // 구조 분해X
+    let a = 10;
+    let b = 5;
+    let temp;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    console.log(a); // 5
+    console.log(b); // 10
+
+    // 구조 분해O
+    let a1 = 10;
+    let b1 = 5;
+    [a1, b1] = [b1, a1];
+
+    console.log(a1); // 5
+    console.log(b1); // 10
+
+
+    console.log('---------- 객체 구조 분해 할당 ----------');
+    // 구조 분해X
+    let colors2 = {
+      c1_2 : "green",
+      c2_2 : "blue",
+      c3_2 : "purple"
+    };
+   
+    // let c1_2 = colors2.c1_2;
+    // let c2_2 = colors2.c2_2;
+    // let c3_2 = colors2.c3_2;
+
+    // console.log(c1_2); // green
+    // console.log(c2_2); // blue
+    // console.log(c3_2); // purple
+
+    // 구조 분해 할당
+    let {c1_2, c2_2, c3_2} = colors2;
+    console.log(c1_2); // green
+    console.log(c2_2); // blue
+    console.log(c3_2); // purple
+
+    let {c1_2: color1, c2_2: color2, c3_2: color3, c4_2="yellow"} = colors2; // 변수명 변경, 기본값 할당
+    console.log(color1); // green
+    console.log(color2); // blue
+    console.log(color3); // purple
+    console.log(c4_2); // yellow
+  </script>
+</body>
+
+</html>
